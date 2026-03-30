@@ -5,8 +5,15 @@ import (
 	"net"
 )
 
+func handleConnection(conn net.Conn) {
+	defer conn.Close()
+
+	fmt.Println("Handling connection from: ", conn.RemoteAddr())
+}
+
 func main() {
 	listener, err := net.Listen("tcp", ":8080")
+	
 	if err != nil {
 		fmt.Println("Error starting server:", err)
 		return
@@ -17,10 +24,13 @@ func main() {
 
 	for {
 		conn, err := listener.Accept()
+
 		if err != nil {
 			fmt.Println("Error accepting the connection", err)
 			continue
 		}
-		fmt.Println("New connection from:", conn.RemoteAddr())
+
+		// Go routines allowing for parallel threading within the chatroom
+		go handleConnection(conn)
 	}
 }
