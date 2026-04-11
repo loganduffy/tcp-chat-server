@@ -1,6 +1,6 @@
 # TCP Chat Server
 
-This is a TCP Chat Server that uses connects x amount of clients to a TCP chat room
+This is a TCP Chat Server that uses connects x amount of clients to the server.
 
 ## What I Learned
 
