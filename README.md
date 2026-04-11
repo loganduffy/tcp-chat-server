@@ -4,7 +4,7 @@ This is a TCP Chat Server that uses connects x amount of clients to a TCP chat r
 
 ## What I Learned
 
-I learned that a Tranmission Control Protocol (TCP) is an exact 1 to 1 connection between a client and a server. I learned how goroutines work and security concerns involving them such as race conditions, when multiple goroutines access shared package-level data simultaneously. I handled this issue with using a mutex to lock the shared data (the clients slice) during reads and writes.
+I learned that a Tranmission Control Protocol (TCP) is an exact 1 to 1 connection between a client and a server. I learned how goroutines work and security concerns involving them such as race conditions, when multiple goroutines access shared package-level data simultaneously. I handled this issue by using a mutex to lock the shared data (the clients slice) during reads and writes.
 
 ## How It Works
 
